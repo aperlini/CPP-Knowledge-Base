@@ -83,7 +83,26 @@ class B : public A {
 
 Lamdas or anonymous functions are functions definitions that are not bound to an identifier. [^4]
 
-```cpp 
+``` cpp
+auto add = [](int x, int y) -> int { return x + y; };
+int result = add(1, 2);
+
+// capture by value
+int sum = 90;
+auto add = [sum] (int to_add) -> int { return sum + to_add; };
+int total = add(10);
+
+// implicit capture by value
+int a=1, b=2, c=3, d=4;
+auto prod = [=] () -> int { return a*b*c*d; };
+
+// capture by reference
+int ref = 2048;
+auto double_it = [&ref] () -> int { ref += ref; }
+
+// implicit capture by reference
+int a = 10, b = 11, c = 12;
+auto increments = [&] () -> int { ++a; ++b; ++c; }
 ```
 
 
