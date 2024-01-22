@@ -57,6 +57,9 @@ class A {
     	A(int n) : a(n) {}
     	virtual ~A() {} // <---- destructor
     	virtual void print() const = 0;
+    	virtual void display() const {
+            std::cout << "display function called from A" << std::endl;
+        }
     	int get_a() const {
             return this->a;
         }
@@ -67,11 +70,20 @@ class B : public A {
         std::cout << "Constructing B with param i: " << this->get_a() << std::endl;
     }
     ~B() override {}
-    void print() override const {
+    void print() const override {
         std::cout << "method overriden in class B" << std::endl;
     }
-    
+    void print() const override {
+        std::cout << "display function called from B" << std::endl;
+    }    
 }
+```
+
+## Lambda
+
+Lamdas or anonymous functions are functions definitions that are not bound to an identifier. [^4]
+
+```cpp 
 ```
 
 
@@ -79,4 +91,5 @@ class B : public A {
 [^1]: https://en.wikipedia.org/wiki/Inline_function
 [^2]: https://www.geeksforgeeks.org/inline-functions-cpp/
 [^3]: https://en.wikipedia.org/wiki/Virtual_function
+[^4]: https://en.wikipedia.org/wiki/Anonymous_function
 
