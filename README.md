@@ -1,4 +1,4 @@
-# Knowledge base
+# C++ Knowledge base
 
 Personnal documentation on C++ concepts and knowledge. 
 
