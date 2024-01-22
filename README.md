@@ -2,27 +2,6 @@
 
 Personnal documentation on C++ concepts and knowledge. 
 
-## Concepts to be covered
-
-- [x] destructor
-
-- [ ] exceptions
-
-- [ ] friend function
-
-- [x] inline functions vs. macros
-
-- [x] lambda
-
-- [ ] operator overloading
-
-- [ ] static cast
-
-- [ ] templates
-
-- [x] virtual functions
-
-  
 
 ## Destructor
 
@@ -133,7 +112,17 @@ int main() {
 }
 ```
 
+## Concepts to be covered
 
+- [x] destructor
+- [ ] exceptions
+- [ ] friend function
+- [x] inline functions vs. macros
+- [x] lambda
+- [ ] operator overloading
+- [ ] static cast
+- [ ] templates
+- [x] virtual functions
 
 [^1]: https://en.wikipedia.org/wiki/Inline_function
 [^2]: https://www.geeksforgeeks.org/inline-functions-cpp/
