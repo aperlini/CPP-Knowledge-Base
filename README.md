@@ -6,17 +6,17 @@ Personnal documentation on C++ concepts and knowledge.
 
 In C++, inline functions serves as compiler directive that suggests that the compiler substitute the body of a function by performing inline expansion at compile-time.
 
-When a program executes an inline function call, the CPU directly  substitutes the function code, eliminating the need to store the memory  address of the next instruction. [^ 1]
+When a program executes an inline function call, the CPU directly  substitutes the function code, eliminating the need to store the memory  address of the next instruction. [^1]
 
 ```cpp
 inline int square(int side) { return side * side; }
 ```
 
-C uses macros. At compile-time, the preprocessor replaces all macro calls  within the macro code. in C++, it is recommended to always use the inline function instead of macros as they are error-prone. It is recommanded to always use inline functions instead. [^ 2]
+C uses macros. At compile-time, the preprocessor replaces all macro calls  within the macro code. in C++, it is recommended to always use the inline function instead of macros as they are error-prone. It is recommanded to always use inline functions instead. [^2]
 
 ## Virtual functions
 
-Virtual functions are  inheritable and overridable methods. They allow for the execution of target functions that were not precisely identified at compile time. When defined in a base class, the modifier is inherited by all implementations of that method in derived class. [^ 3] Virtual functions should be accessed using a pointer or reference of base class type to achieve runtime polymorphism : 
+Virtual functions are  inheritable and overridable methods. They allow for the execution of target functions that were not precisely identified at compile time. When defined in a base class, the modifier is inherited by all implementations of that method in derived class. [^3] Virtual functions should be accessed using a pointer or reference of base class type to achieve runtime polymorphism : 
 
 ```cpp
 class A {
@@ -26,7 +26,7 @@ class A {
 
 class B : public A {
     public:
-    	void print() {
+    	void print() override const {
             cout << "method overriden in class B" << endl;
         }
 };
@@ -67,7 +67,7 @@ class B : public A {
         std::cout << "Constructing B with param i: " << this->get_a() << std::endl;
     }
     ~B() override {}
-    void print() override {
+    void print() override const {
         std::cout << "method overriden in class B" << std::endl;
     }
     
@@ -76,9 +76,7 @@ class B : public A {
 
 
 
-
-
-[^ 1]: https://en.wikipedia.org/wiki/Inline_function
-[^ 2]: https://www.geeksforgeeks.org/inline-functions-cpp/
-[^ 3]: https://en.wikipedia.org/wiki/Virtual_function
+[^1]: https://en.wikipedia.org/wiki/Inline_function
+[^2]: https://www.geeksforgeeks.org/inline-functions-cpp/
+[^3]: https://en.wikipedia.org/wiki/Virtual_function
 
