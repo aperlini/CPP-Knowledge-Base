@@ -2,48 +2,27 @@
 
 Personnal documentation on C++ concepts and knowledge. 
 
-## Inline functions vs. Macros
+## Concepts to be covered
 
-In C++, inline functions serves as compiler directive that suggests that the compiler substitute the body of a function by performing inline expansion at compile-time.
+- [x] destructor
 
-When a program executes an inline function call, the CPU directly  substitutes the function code, eliminating the need to store the memory  address of the next instruction. [^1]
+- [ ] exceptions
 
-```cpp
-inline int square(int side) { return side * side; }
-```
+- [ ] friend function
 
-C uses macros. At compile-time, the preprocessor replaces all macro calls  within the macro code. in C++, it is recommended to always use the inline function instead of macros as they are error-prone. It is recommanded to always use inline functions instead. [^2]
+- [x] inline functions vs. macros
 
-## Virtual functions
+- [x] lambda
 
-Virtual functions are  inheritable and overridable methods. They allow for the execution of target functions that were not precisely identified at compile time. When defined in a base class, the modifier is inherited by all implementations of that method in derived class. [^3] Virtual functions should be accessed using a pointer or reference of base class type to achieve runtime polymorphism : 
+- [ ] operator overloading
 
-```cpp
-class A {
-    public:
-    	virtual void print() const =  0;
-};
+- [ ] static cast
 
-class B : public A {
-    public:
-    	void print() override const {
-            cout << "method overriden in class B" << endl;
-        }
-};
+- [ ] templates
 
-int main() {
-    
-    // Creating 'b' object
-    B b;
-    
-    // 'a' pointer store the address of b
-    A *a = &b;
-    
-    // calling 'method' using 'a' pointer
-    a->method();
-    
-}
-```
+- [x] virtual functions
+
+  
 
 ## Destructor
 
@@ -79,6 +58,22 @@ class B : public A {
 }
 ```
 
+
+
+## Inline functions vs. Macros
+
+In C++, inline functions serves as compiler directive that suggests that the compiler substitute the body of a function by performing inline expansion at compile-time.
+
+When a program executes an inline function call, the CPU directly  substitutes the function code, eliminating the need to store the memory  address of the next instruction. [^1]
+
+```cpp
+inline int square(int side) { return side * side; }
+```
+
+C uses macros. At compile-time, the preprocessor replaces all macro calls  within the macro code. in C++, it is recommended to always use the inline function instead of macros as they are error-prone. It is recommanded to always use inline functions instead. [^2]
+
+
+
 ## Lambda
 
 Lamdas or anonymous functions are functions definitions that are not bound to an identifier. [^4]
@@ -103,6 +98,39 @@ auto double_it = [&ref] () -> int { ref += ref; }
 // implicit capture by reference
 int a = 10, b = 11, c = 12;
 auto increments = [&] () -> int { ++a; ++b; ++c; }
+```
+
+
+
+## Virtual functions
+
+Virtual functions are  inheritable and overridable methods. They allow for the execution of target functions that were not precisely identified at compile time. When defined in a base class, the modifier is inherited by all implementations of that method in derived class. [^3] Virtual functions should be accessed using a pointer or reference of base class type to achieve runtime polymorphism : 
+
+```cpp
+class A {
+    public:
+    	virtual void print() const =  0;
+};
+
+class B : public A {
+    public:
+    	void print() override const {
+            cout << "method overriden in class B" << endl;
+        }
+};
+
+int main() {
+    
+    // Creating 'b' object
+    B b;
+    
+    // 'a' pointer store the address of b
+    A *a = &b;
+    
+    // calling 'method' using 'a' pointer
+    a->method();
+    
+}
 ```
 
 
