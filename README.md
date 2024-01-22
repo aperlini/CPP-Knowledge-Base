@@ -112,6 +112,8 @@ int main() {
 }
 ```
 
+An <u>abstract class</u> with <u>only pure virtual functions and no member variable</u> can be used to model what is called an <u>interface</u> in OOP.
+
 ## Concepts to be covered
 
 - [x] destructor
@@ -119,9 +121,12 @@ int main() {
 - [ ] friend function
 - [x] inline functions vs. macros
 - [x] lambda
+- [ ] objects lifetime
 - [ ] operator overloading
+- [ ] pointers (weak, shared, unique)
 - [ ] static cast
 - [ ] templates
+- [ ] type casting (static, const, dynamic, reinterpret)
 - [x] virtual functions
 
 [^1]: https://en.wikipedia.org/wiki/Inline_function
